@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>       <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>          <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>          <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <title>输出模型 - PHP\Slion</title>
+    <meta name="description" content="an extension framework base slim." />
+    <meta name="author" content="I, Me & Myself">
+    <meta charset="UTF-8">
+    <link rel="icon" href="../themes/me/img/favicon-blue.png" type="image/x-icon">
+    <!-- Mobile -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&subset=latin,cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
+    <!-- CSS -->
+    <link href='../themes/me/css/theme-blue.min.css' rel='stylesheet' type='text/css'>
+            <!-- Tipue Search -->
+        <link href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+<body class="">
+    
+
+<div class="Navbar hidden-print">
+    <a class="Navbar__brand" href="../index.html">PHP\Slion</a>
+
+    <div class="Search">
+        <svg class="Search__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 451 451"><path d="M447.05 428l-109.6-109.6c29.4-33.8 47.2-77.9 47.2-126.1C384.65 86.2 298.35 0 192.35 0 86.25 0 .05 86.3.05 192.3s86.3 192.3 192.3 192.3c48.2 0 92.3-17.8 126.1-47.2L428.05 447c2.6 2.6 6.1 4 9.5 4s6.9-1.3 9.5-4c5.2-5.2 5.2-13.8 0-19zM26.95 192.3c0-91.2 74.2-165.3 165.3-165.3 91.2 0 165.3 74.2 165.3 165.3s-74.1 165.4-165.3 165.4c-91.1 0-165.3-74.2-165.3-165.4z"/></svg>
+        <input type="search" id="tipue_search_input" class="Search__field" placeholder="Search..." autocomplete="on" results=25 autosave=text_search>
+    </div>
+</div>
+<div class="Columns content">
+    <div class="Columns__left hidden-print Collapsible">
+        <div class="Collapsible__container">
+            <button type="button" class="Button Collapsible__trigger">
+                <span class="Collapsible__trigger--bar"></span>
+                <span class="Collapsible__trigger--bar"></span>
+                <span class="Collapsible__trigger--bar"></span>
+            </button>
+        </div>
+
+        <div class="Collapsible__content">
+            <!-- Navigation -->
+            <ul class='Nav'><li class='Nav__item '><a href="../介绍.html">介绍</a></li><li class='Nav__item '><a href="../快速上手.html">快速上手</a></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>构建应用 </a><ul class='Nav'><li class='Nav__item '><a href="../构建应用 /基础概念.html">基础概念</a></li><li class='Nav__item '><a href="../构建应用 /目录结构.html">目录结构</a></li><li class='Nav__item '><a href="../构建应用 /引导方案.html">引导方案</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>控制器层</a><ul class='Nav'><li class='Nav__item '><a href="../控制器层/路由.html">路由</a></li><li class='Nav__item '><a href="../控制器层/请求与响应.html">请求与响应</a></li><li class='Nav__item '><a href="../控制器层/控制器对象.html">控制器对象</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>通用工具</a><ul class='Nav'><li class='Nav__item '><a href="../通用工具/配置.html">配置</a></li><li class='Nav__item '><a href="../通用工具/语言包.html">语言包</a></li><li class='Nav__item '><a href="../通用工具/页面模版.html">页面模版</a></li><li class='Nav__item '><a href="../通用工具/其他工具.html">其他工具</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>调试方案</a><ul class='Nav'><li class='Nav__item '><a href="../调试方案/调试工具.html">调试工具</a></li><li class='Nav__item '><a href="../调试方案/错误处理.html">错误处理</a></li><li class='Nav__item '><a href="../调试方案/日志方案.html">日志方案</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>测试与文档</a><ul class='Nav'><li class='Nav__item '><a href="../测试与文档/调试工具.html">调试工具</a></li><li class='Nav__item '><a href="../测试与文档/错误处理.html">错误处理</a></li><li class='Nav__item '><a href="../测试与文档/日志方案.html">日志方案</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>构建扩展包</a><ul class='Nav'><li class='Nav__item '><a href="../构建扩展包/创建引导.html">创建引导</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>布署</a><ul class='Nav'><li class='Nav__item '><a href="../布署/配置与环境.html">配置与环境</a></li></ul></li><li class='Nav__item Nav__item--open has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>数据库模块</a><ul class='Nav'><li class='Nav__item '><a href="../数据库模块/模型与基本功能.html">模型与基本功能</a></li><li class='Nav__item '><a href="../数据库模块/缓存.html">缓存</a></li><li class='Nav__item Nav__item--active'><a href="../数据库模块/输出模型.html">输出模型</a></li><li class='Nav__item '><a href="../数据库模块/模型管理器.html">模型管理器</a></li></ul></li><li class='Nav__item  has-children'><a href="#" class="aj-nav folder"><i class="Nav__arrow">&nbsp;</i>命令行工具 Chord</a><ul class='Nav'><li class='Nav__item '><a href="../命令行工具 Chord/基础使用.html">基础使用</a></li></ul></li></ul>
+
+            <div class="Links">
+                
+                
+                            </div>
+        </div>
+        <!-- For Mobile -->
+
+
+    </div>
+    <div class="Columns__right ">
+
+        <div class="Columns__right__content">
+            <div class="doc_content">
+                <article class="Page">
+            <div class="Page__header">
+            <h1>输出模型</h1>
+        </div>
+    
+    <div class="s-content">
+        <ul class="TableOfContents">
+<li>
+<p><a href="#page_">输出模型</a></p>
+<ul class="TableOfContents">
+<li>
+<p><a href="#page_Vo">创建Vo模型</a></p>
+</li>
+<li>
+<p><a href="#page_">数据操作</a></p>
+<ul class="TableOfContents">
+<li>
+<p><a href="#page_">填充数据</a></p>
+</li>
+<li>
+<p><a href="#page_">字段映射</a></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#page_">数组输出</a></p>
+<ul class="TableOfContents">
+<li>
+<p><a href="#page_">输出带键值数组</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#page_">分页输出</a></p>
+</li>
+<li>
+<p><a href="#page_">关联载入</a></p>
+</li>
+</ul>
+<h1 id="page_">输出模型</h1>
+<p>slion-db模块提供了输出模型基类，位于命名空间<code>\Slion\DB\Vo</code>下，以下简称Vo，其作用是分离内部业务模型与对外交互模型，使得代码结构上更加灵活。</p>
+<h2 id="page_Vo">创建Vo模型</h2>
+<p>Vo基类引用了Meta类的大多数方法，声明一个Vo对象的方式如下：</p>
+<pre><code class="language-php">namespace MyApp\Vo;
+use Slion\DB\Vo;
+
+/**
+ *
+ * @property int $id
+ * @property string $nickname
+ */
+class User extends Vo {
+    protected static $_default = [
+        'id'        =&gt; null,
+        'nickname'  =&gt; 0,
+    ];
+}
+</code></pre>
+<p>同样的，Slion推荐在你的应用命名空间下建立一个Vo目录，并在其中建立一个Base基类，以方便引用与扩展功能。</p>
+<p><strong>Base基类</strong></p>
+<pre><code class="language-php">namespace MyApp\Vo;
+use Slion\DB\Vo;
+
+abstract class Base extends Vo {
+}
+</code></pre>
+<p><strong>User Vo</strong></p>
+<pre><code class="language-php">namespace MyApp\Vo;
+
+/**
+ *
+ * @property int $id
+ * @property string $nickname
+ */
+class User extends Base {
+    protected static $_default = [
+        'id'        =&gt; null,
+        'nickname'  =&gt; 0,
+    ];
+}
+</code></pre>
+<h2 id="page_">数据操作</h2>
+<p>Meta类大多数的操作Vo都支持，比如<code>_confirm_</code>和<code>_default</code>勾子，但在部分功能上会有少许差异。</p>
+<h3 id="page_">填充数据</h3>
+<p>Vo的构造器与Meta类有所不同，默认情况下其接收一个数组或是带有<code>toArray()</code>公共方法的对象，并将其填充进自身。这使得在使用<strong>业务模型（Model）</strong>时将其转换到一个Vo模型变得容易。</p>
+<pre><code class="language-php">use MyApp\{Vo, Models};
+
+#...
+
+# 在action中
+$response-&gt;player = new Vo\User(Models\User::found($user_id));
+</code></pre>
+<p>你也可以扩展Vo的构造器，使之由多个对象或数组组成，这在为外部提供整合性视图的时候能起到作用。</p>
+<pre><code class="language-php">namespace MyApp\Vo;
+use MyApp\Models;
+
+class Hero extends Base {
+    protected static $_default = [
+        'attack'    =&gt; null,
+        'defense'   =&gt; null,
+        'owner_id'  =&gt; null,
+    ];
+
+    public function __construct(Models\Weapon $weapon, Models\Armor $armor, int $user_id = null) {
+        $this-&gt;fill($weapon);
+        $this-&gt;fill($armor);
+        $this-&gt;owner_id = $user_id;
+    }
+}
+</code></pre>
+<h3 id="page_">字段映射</h3>
+<p>当填充进来的对象字段与Vo中的字段有出差异时——这通常发生在参数名对外需要转义或是做兼容时——可以使用字段映射的方式实现。</p>
+<pre><code class="language-php">namespace MyApp\Vo;
+
+class Room extends Base {
+    protected static $_fields_mapping = [
+        'id'    =&gt; 'room_id',
+    ];
+}
+</code></pre>
+<h2 id="page_">数组输出</h2>
+<p>在某些情况下，我们需要输出的不是一个Vo，而是一个列表。这时可以使用<code>Vo::makeArray()</code>静态方法。</p>
+<pre><code class="language-php">use MyApp\{Vo, Models};
+
+#...
+
+# 在action中
+$response-&gt;player_list = Vo\User::makeArray(Models\User::query()-&gt;get());
+
+</code></pre>
+<p>makeArray方法支持接收一组数组或是collection对象，因此可以直接将Models的查询结果传递进去。如果Vo对象的构造器需要接收多个对象，可以像下面这样：</p>
+<pre><code class="language-php">use MyApp\{Vo, Models};
+
+#...
+
+# 在action中
+$response-&gt;hero_list = Vo\Hero::makeArray(
+    Models\Weapon::query()-&gt;get(),
+    Models\Armor::query()-&gt;get(),
+    Models\User::query()-&gt;pluck('id')
+);
+
+</code></pre>
+<blockquote>
+<p>注意在上面的例子中，为了简化代码，默认三条查询出来的数据顺序是一一对应的，实际应用中需要额外提供方法确保取出的数据每列顺序一致。</p>
+</blockquote>
+<h3 id="page_">输出带键值数组</h3>
+<p>上面的代码生成的列表是自然数组，如果生成的数组需要以某个字段值为key，则需要在Vo中事先声明。</p>
+<pre><code class="language-php">namespace MyApp\Vo;
+
+/**
+ *
+ * @property int $id
+ * @property string $nickname
+ */
+class User extends Base {
+    protected static $_index_field = 'id';
+}
+</code></pre>
+<p>接着调用<code>Vo::makeIndexedArray()</code>方法生成数组。</p>
+<pre><code class="language-php">use MyApp\{Vo, Models};
+
+#...
+
+# 在action中
+$response-&gt;player_list = Vo\User::makeIndexedArray(Models\User::query()-&gt;get());
+
+</code></pre>
+<h2 id="page_">分页输出</h2>
+<p>当需要输出带分页信息的列表时，使用<code>Vo::makeBlock()</code>方法，这会返回一个Block对象。对slion-db来说，分页的每次输出都是一个<strong>块</strong>，即Block</p>
+<p>Block对象在输出时会给出三个字段：</p>
+<ul>
+<li>has_more - <em>是否有下一页，1或0</em>
+</li>
+<li>offset - <em>下一页的偏移参数</em>
+</li>
+<li>list - <em>数据列表</em>
+</li>
+</ul>
+<p>这样交互方即可根据给出的参数进行判断和提交，方便分页数据读取策略的变更。其调用方式如下：</p>
+<pre><code class="language-php">use MyApp\{Vo, Models};
+
+#...
+
+# 在action中
+$block = Vo\User::makeBlock($this-&gt;offset(), $this-&gt;limit());
+
+$response-&gt;player_block = $block(Models\User::query()
+    -&gt;skip($block-&gt;offset())
+    -&gt;take($block-&gt;limit())
+    -&gt;get());
+</code></pre>
+<p>对上面代码做注解：</p>
+<ol>
+<li>先创建一个block对象，<code>$this-&gt;offset()</code>和<code>$this-&gt;limit()</code>是取request传进来的分页参数</li>
+<li>使用Model正常查询，这时使用的offset和limit参数是由block提供的（接收参数后由block接管）</li>
+<li>将查询得到的collection或数组传回给block，这是个支持闭包调用的对象，生成数组化的block结构，即上面提到的3个字段</li>
+</ol>
+<h1 id="page_">关联载入</h1>
+<p>slion-db的Model并未像其他DBO那样对模型间的关系提供更多的支持，这是考虑到<strong>Key-Value + 全文索引</strong>架构下，传统数据结构中的关系在模型中的体现已经不是必须的了。所以模型间的关联读取改为在Vo层通过关联载入（Vo Autoload）和聚合（Vo Aggregation）这两个功能实现，这里先说前者。</p>
+<p>关联载入的使用场景是，设想有一个模型，其中有几个字段是传统数据库中的<em>外键</em>概念，比如：</p>
+<table>
+<thead>
+<tr>
+<th>hero</th>
+<th>user</th>
+<th></th>
+</tr>
+</thead>
+
+</table>
+<p>|id|||
+|name|||
+|owner_id|----&gt;|id|
+|attack||nickname|
+|defense|||</p>
+<p>表格中hero模型的owner_id字段是user的主键，可以读出一个user模型。</p>
+    </div>
+
+        <nav>
+        <ul class="Pager">
+            <li class=Pager--prev><a href="../数据库模块/缓存.html">Previous</a></li>            <li class=Pager--next><a href="../数据库模块/模型管理器.html">Next</a></li>        </ul>
+    </nav>
+    </article>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    <!-- jQuery -->
+    <script src="../themes/daux/js/jquery-1.11.3.min.js"></script>
+
+    <!-- hightlight.js -->
+    <script src="../themes/daux/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- JS -->
+    
+    <script src="../themes/daux/js/daux.js"></script>
+
+            <!-- Tipue Search -->
+        <script type="text/javascript" src="../tipuesearch/tipuesearch.js"></script>
+
+        <script>
+            window.onunload = function(){}; // force $(document).ready to be called on back/forward navigation in firefox
+            $(function() {
+                tipuesearch({
+                    'base_url': '../'
+                });
+            });
+        </script>
+    
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+    "title": "PHP\\Slion",
+    "tagline": "an extension framework base slim.",
+    "image": "www.jpg",
+    
+    "html": {
+        "theme": "me-blue",
+        "auto_landing": false,
+
+        "date_modified": false,
+        "auto_toc": true
+    },
+    
+    "float": false,
+    "toggle_code": true,
+    "breadcrumbs": false,
+    "breadcrumb_separator" : " > ",
+        
+    "repo": "andares/slion",
+    
+    "ignore": {
+    },
+    
+    "links": {
+        "PHP": "http://php.net"
+    }
+}
