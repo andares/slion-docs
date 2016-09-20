@@ -184,6 +184,25 @@ class Room extends Base {
     ];
 }
 </code></pre>
+<p>字段映射并不替换对应同名字段的填充，也就是说字段映射可以用来复制一个字段的值到另一个字段，例如：</p>
+<pre><code class="language-php">namespace MyApp\Vo;
+
+class Room extends Base {
+    protected static $_fields_mapping = [
+        'id'    =&gt; 'room_id',
+    ];
+
+    protected static $_default = [
+        'id'        =&gt; null,
+        'room_id'   =&gt; null,
+    ];
+}
+
+</code></pre>
+<p>上面所声明的Room Vo如果使用填充方法赋room_id进去，id与room_id会获得相同的值。</p>
+<blockquote>
+<p>这在某些场合中可以用来一定程度上代替default勾子的功能，比如在聚合中，由于聚合过程中不触发confirm()，只有在聚合vo调用pull()之后才会confirm()，所以当需要用到复制字段时，使用字段映射才能正确发挥作用。</p>
+</blockquote>
 <h2 id="page_">数组输出</h2>
 <p>在某些情况下，我们需要输出的不是一个Vo，而是一个列表。这时可以使用<code>Vo::makeArray()</code>静态方法。</p>
 <pre><code class="language-php">use MyApp\{Vo, Models};
@@ -236,12 +255,9 @@ $response-&gt;player_list = Vo\User::makeIndexedArray(Models\User::query()-&gt;g
 <p>当需要输出带分页信息的列表时，使用<code>Vo::makeBlock()</code>方法，这会返回一个Block对象。对slion-db来说，分页的每次输出都是一个<strong>块</strong>，即Block</p>
 <p>Block对象在输出时会给出三个字段：</p>
 <ul>
-<li>has_more - <em>是否有下一页，1或0</em>
-</li>
-<li>offset - <em>下一页的偏移参数</em>
-</li>
-<li>list - <em>数据列表</em>
-</li>
+<li>has_more - 是否有下一页，1或0</li>
+<li>offset - 下一页的偏移参数</li>
+<li>list - 数据列表</li>
 </ul>
 <p>这样交互方即可根据给出的参数进行判断和提交，方便分页数据读取策略的变更。其调用方式如下：</p>
 <pre><code class="language-php">use MyApp\{Vo, Models};
@@ -264,7 +280,7 @@ $response-&gt;player_block = $block(Models\User::query()
 </ol>
 <h1 id="page_">关联载入</h1>
 <p>slion-db的Model并未像其他DBO那样对模型间的关系提供更多的支持，这是考虑到<strong>Key-Value + 全文索引</strong>架构下，传统数据结构中的关系在模型中的体现已经不是必须的了。所以模型间的关联读取改为在Vo层通过关联载入（Vo Autoload）和聚合（Vo Aggregation）这两个功能实现，这里先说前者。</p>
-<p>关联载入的使用场景是，设想有一个模型，其中有几个字段是传统数据库中的<em>外键</em>概念，比如：</p>
+<p>关联载入的使用场景是，设想有一个模型，其中有几个字段是传统数据库中的外键概念，比如：</p>
 <table>
 <thead>
 <tr>
